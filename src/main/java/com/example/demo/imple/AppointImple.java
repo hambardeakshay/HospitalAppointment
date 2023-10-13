@@ -23,7 +23,7 @@ public class AppointImple implements AppointmentService
 	}
 
 	@Override
-	public Appointment getAppointmentById(Long id) {
+	public Appointment getAppointmentById(int id) {
 		
 		return appointRepo.findById(id).orElse(null);
 	}
@@ -35,7 +35,7 @@ public class AppointImple implements AppointmentService
 	}
 
 	@Override
-	public void deletePatient(Long id) 
+	public void deletePatient(int id) 
 	{
 		appointRepo.deleteById(id);
 		

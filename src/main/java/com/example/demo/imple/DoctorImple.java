@@ -23,7 +23,7 @@ public class DoctorImple implements DoctorService
 	}
 
 	@Override
-	public Doctor getDoctorById(Long id) {
+	public Doctor getDoctorById(int id) {
 		
 		return doctorRepo.findById(id).orElse(null);
 	}
@@ -36,7 +36,7 @@ public class DoctorImple implements DoctorService
 	}
 
 	@Override
-	public void deleteDoctor(Long id) {
+	public void deleteDoctor(int id) {
 		doctorRepo.deleteById(id);
 		
 	}

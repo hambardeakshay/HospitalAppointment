@@ -20,14 +20,13 @@ import lombok.ToString;
 @Table(name="Appointment")
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
-@Getter
+
 @ToString
 public class Appointment 
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @ManyToOne
     private Doctor doctor;
@@ -36,6 +35,39 @@ public class Appointment
     private Patient patient;
 
     private LocalDateTime appointmentDateTime;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Doctor getDoctor() {
+		return doctor;
+	}
+
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
+	}
+
+	public Patient getPatient() {
+		return patient;
+	}
+
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
+	public LocalDateTime getAppointmentDateTime() {
+		return appointmentDateTime;
+	}
+
+	public void setAppointmentDateTime(LocalDateTime appointmentDateTime) {
+		this.appointmentDateTime = appointmentDateTime;
+	}
+    
 
 
 

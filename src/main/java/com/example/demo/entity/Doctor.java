@@ -20,14 +20,13 @@ import lombok.ToString;
 @Table(name="doctor")
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
-@Getter
+
 @ToString
 public class Doctor 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private int id;
 	@Column(name="name" , length = 50)
 	private String name;
 	@Column(name="speciality" , length = 50)
@@ -36,6 +35,38 @@ public class Doctor
 	@OneToMany(mappedBy = "doctor")
     private List<Appointment> appointment;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSpeciality() {
+		return speciality;
+	}
+
+	public void setSpeciality(String speciality) {
+		this.speciality = speciality;
+	}
+
+	public List<Appointment> getAppointment() {
+		return appointment;
+	}
+
+	public void setAppointment(List<Appointment> appointment) {
+		this.appointment = appointment;
+	}
+	
 	
 	
 	

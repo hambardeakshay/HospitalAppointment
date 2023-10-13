@@ -7,8 +7,8 @@ import com.example.demo.entity.Patient;
 public interface PatientService
 {
 	List<Patient> getAllPatient();
-	public Patient getPatient(Long id);
+	public Patient getPatient(int id);
 	public Patient createPatient(Patient p);
-	public void deleteById(Long id);
+	public void deleteById(int id);
 
 }

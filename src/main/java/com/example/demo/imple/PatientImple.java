@@ -22,7 +22,7 @@ public class PatientImple implements PatientService
 	}
 
 	@Override
-	public Patient getPatient(Long id) {
+	public Patient getPatient(int id) {
 		
 		return patientRepo.findById(id).orElse(null);
 	}
@@ -34,7 +34,7 @@ public class PatientImple implements PatientService
 	}
 
 	@Override
-	public void deleteById(Long id)
+	public void deleteById(int id)
 	{
 		patientRepo.deleteById(id);
 		

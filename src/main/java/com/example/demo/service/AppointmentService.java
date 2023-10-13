@@ -7,8 +7,8 @@ import com.example.demo.entity.Appointment;
 public interface AppointmentService 
 {
 	public List<Appointment> getAllappointments();
-	public Appointment getAppointmentById(Long id);
+	public Appointment getAppointmentById(int id);
 	public Appointment creteAppointment(Appointment appointment);
-	public void deletePatient(Long id);
+	public void deletePatient(int id);
 
 }

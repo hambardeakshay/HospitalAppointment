@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entity.Appointment;
 
-public interface AppoinmentRepo extends JpaRepository<Appointment,Long>
+public interface AppoinmentRepo extends JpaRepository<Appointment,Integer>
 {
 
 }

@@ -11,37 +11,41 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.Appointment;
-import com.example.demo.service.AppointmentService;
+import com.example.demo.entity.Patient;
+import com.example.demo.service.PatientService;
 
-@RequestMapping("appointment")
+@RequestMapping("/patient")
 @RestController
-public class AppointController 
+public class PatientController 
 {
 	@Autowired
-	private AppointmentService appointService;
+	public PatientService patientService;
 	
 	@GetMapping("/")
-	public List<Appointment> getAllAppointMent()
+	public List<Patient> getallPatient()
 	{
-		return appointService.getAllappointments();
+		System.out.println("list of all patient");
+		return patientService.getAllPatient();
 	}
 	@GetMapping("/{id}")
-	public Appointment getAppointmentById(@PathVariable int id)
+	public Patient getPatientById(@PathVariable int id)
 	{
-		return appointService.getAppointmentById(id);
+		return patientService.getPatient(id);
 	}
 	@PostMapping("/")
-	public Appointment createAppointment(@RequestBody Appointment appointment)
+	public Patient createPatient(@RequestBody Patient patient)
 	{
-		return appointService.creteAppointment(appointment);
+		return patientService.createPatient(patient);
 	}
 	@DeleteMapping("/{id}")
-	public void deleteAppointmentById(@PathVariable int id)
+	public void deleteById(@PathVariable int id)
 	{
-		appointService.deletePatient(id);
+		patientService.deleteById(id);
+		
 	}
 
+	
+	
 	
 
 }
